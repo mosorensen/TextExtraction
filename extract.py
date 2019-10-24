@@ -34,36 +34,35 @@ for table in document.tables:
             key = text[0]
             table_key = key
             entries = text[1:]
+            table_data['table'] = entries
         
         elif i !=0 : # Establishing the contents in the rows afterwards
             j=0 #let j index over the entries in the row tuple
-            while j < len(text)-1:
-                curr = text[j]
-                if len(curr) > 2:
-                    key = curr
-                    entries = text[j+1]
-                    j=j+2
-                else:
-                    j=j+1
-                    print("not longer than 2")
-                
+            while j < len(text)-1: #while we have at least one more entry in the row
+                #if len(text) > 2: #the key must be longer than 2 characters
+                key = text[j]
+                entries = text[j+1]
+                j=j+2
+                #else: #if the key is shorter than 2 characters skip it
+                    #j=j+1 
+                    #print("not longer than 2")
+                # add the keys and entries into a table specific dictionary
+                table_data[key] = entries
+            #this code below saves the entries as an array
             #key = text[0]
             #entries = text[1:]
             #print(key)
             #print(entries)
-
-        # add the keys and entries into a table specific dictionary
-        table_data[key] = entries
-        
-    # add the dictionary to the overall dictionary
+            
+    # add the table to the overall document dictionary
     all_tables[table_key]=table_data
     print(table_key)
 
 all_tables
 
-cover_page = all_tables['SmartAssessment Report']
 
-cover_page_df = pd.DataFrame.from_dict(cover_page, '')
+cover_page = all_tables['SmartAssessment Report']
+cover_page_df = pd.DataFrame.from_dict(cover_page, 'columns')
 cover_page_df
 
 
