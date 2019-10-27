@@ -52,11 +52,13 @@ for para in document.paragraphs:
     print(para.text)
 
 doc_paths = ["C:/Users/ydecress/Desktop/Cleaning_Small.docx", "C:/Users/ydecress/Desktop/Cleaning_Small_Copy.docx"]
+tables_to_parse = ["info", "competencies"]
+
 for doc_id in range(len(doc_paths)):
     #first read in the given document
     print(doc_id)
     path = doc_paths[doc_id]
-    doc_dict, doc_data = parse_document(doc_id, path)
+    doc_dict, doc_data = parse_document(doc_id, path, tables_to_parse)
     candidate_name=doc_dict['info']['Candidate Name']
     #if this was the first document, we need to create the master dataframe
     #each row will be one executive and each column will contain a variable

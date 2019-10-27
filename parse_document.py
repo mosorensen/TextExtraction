@@ -47,8 +47,8 @@ from docx import Document
 from parse_table import parse_table
 from which_table import which_table
 
-tables_to_parse = ["info", "competencies"]
-def parse_document(doc_id, path):
+
+def parse_document(doc_id, path, tables_to_parse):
     document = Document(path)
     doc_dict = {} #dictionary of all tables
     doc_data = pd.DataFrame({'doc_id':[doc_id], 'doc_path':[path]})
