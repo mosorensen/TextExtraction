@@ -19,5 +19,6 @@ parse_table.py reads in a table and extracts the relevant information. In the fu
 	as a dataframe row.
 
 
+process.pl is a perl file that Prof. Sorenson created to read in PDF interviews and parse their contents.
 Extract.py is an old file that contains all the functions written at the time. I do not suggest
 	using it, as collaboration is easier when people are focused on seperate files.
