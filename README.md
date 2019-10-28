@@ -1,3 +1,6 @@
+# TextExtraction
+Code that takes word documents as inputs and outputs the useful information
+
 process_all.py is a python script that iterates over all the documents that 
 	are explicitly listed in the document_paths list and used parse_document
 	to extract and store the information in these documents once as a dictionary
@@ -12,6 +15,7 @@ which_table.py reads in a table and outputs the type of information that it cont
 	This is helpful if different types of tables vary in their format and, thus,
 	should be parsed accordingly. It is also helpful in assigning a name to a given
 	table in the document dictionary.
+
 parse_table.py reads in a table and extracts the relevant information. In the future,
 	we can either write seperate functions for parse_table that parse in only specific
 	tables, or we can add an input that tells parse_table what kind of table it is
